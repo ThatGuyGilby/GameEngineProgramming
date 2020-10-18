@@ -50,15 +50,23 @@ endif()
 add_library(myengine
   src/myengine/Core.cpp
   src/myengine/Entity.cpp
-  src/myengine/Component.cpp
   src/myengine/Exception.cpp
+  
+  src/myengine/Component.cpp
   src/myengine/Renderer.cpp
+  src/myengine/KeyboardController.cpp
+  src/myengine/Transform.cpp
 
   src/myengine/Core.h
   src/myengine/Entity.h
-  src/myengine/Component.h
   src/myengine/Exception.h
+  
+  src/myengine/Component.h
   src/myengine/Renderer.h
+  src/myengine/KeyboardController.h
+  src/myengine/Transform.h
+  
+  src/myengine/myengine.h
 )
 
 target_link_libraries(myengine rend ${LIBSDL2} ${STATIC_LIBS})

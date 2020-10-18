@@ -1,3 +1,6 @@
+#ifndef MYENGINE_CORE_H
+#define MYENGINE_CORE_H
+
 #include <SDL2/SDL.h>
 #include <rend/rend.h>
 
@@ -12,21 +15,23 @@ struct Entity;
 
 struct Core
 {
-  friend struct myengine::Renderer;
+	friend struct myengine::Renderer;
 
-  static std::shared_ptr<Core> initialize();
+	static std::shared_ptr<Core> initialize();
 
-  std::shared_ptr<Entity> addEntity();
+	std::shared_ptr<Entity> addEntity();
 
-  void start();
+	void start();
 
-private:
-  std::vector<std::shared_ptr<Entity>> entities;
-  std::weak_ptr<Core> self;
-  SDL_Window* window;
-  SDL_GLContext glContext;
-  std::shared_ptr<rend::Context> context;
+	private:
+		std::vector<std::shared_ptr<Entity>> entities;
+		std::weak_ptr<Core> self;
+		SDL_Window* window;
+		SDL_GLContext glContext;
+		std::shared_ptr<rend::Context> context;
 
 };
 
 }
+
+#endif

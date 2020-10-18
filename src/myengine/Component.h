@@ -6,28 +6,28 @@
 namespace myengine
 {
 
-struct Entity;
-struct Core;
+	struct Entity;
+	struct Core;
 
-struct Component
-{
-  friend struct myengine::Entity;
+	struct Component
+	{
+		friend struct myengine::Entity;
 
-  virtual void onInitialize();
+		virtual void onInitialize();
 
-  void tick();
-  virtual void onTick();
+		void tick();
+		virtual void onTick();
 
-  void render();
-  virtual void onRender();
+		void render();
+		virtual void onRender();
 
-  std::shared_ptr<Entity> getEntity();
-  std::shared_ptr<Core> getCore();
+		std::shared_ptr<Entity> getEntity();
+		std::shared_ptr<Core> getCore();
 
-private:
-  std::weak_ptr<Entity> entity;
+	private:
+		std::weak_ptr<Entity> entity;
 
-};
+	};
 
 }
 
