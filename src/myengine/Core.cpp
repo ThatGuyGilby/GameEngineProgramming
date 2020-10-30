@@ -47,6 +47,7 @@ namespace myengine
 
     void Core::start()
     {
+        
         bool running = true;
         SDL_Event e = {0};
 
@@ -76,6 +77,5 @@ namespace myengine
             SDL_GL_SwapWindow(window);
         }
     }
-
 }
 

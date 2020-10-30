@@ -1,9 +1,7 @@
 #include "Renderer.h"
 #include "Core.h"
-
 #include "Transform.h"
 #include "Entity.h"
-
 #include <iostream>
 
 namespace myengine
@@ -11,6 +9,11 @@ namespace myengine
 
 	void Renderer::onInitialize()
 	{
+		/// <summary>
+		/// Requirements
+		/// </summary>
+		if (getEntity()->getComponent<Transform>() == NULL) getEntity()->addComponent<Transform>();
+		
 		std::cout << "Initializing" << std::endl;
 
 		const char* src =

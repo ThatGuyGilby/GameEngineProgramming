@@ -1,8 +1,6 @@
 #include "KeyboardController.h"
 #include "Core.h"
-
 #include "Entity.h"
-
 #include <iostream>
 
 namespace myengine

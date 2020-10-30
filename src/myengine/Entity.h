@@ -29,6 +29,23 @@ namespace myengine
 			return rtn;
 		}
 
+		template <typename T>
+		std::shared_ptr<T> getComponent()
+		{
+			std::shared_ptr<T> rtn;
+
+			for (int i = 0; i < components.size(); i++)
+			{
+				rtn = std::dynamic_pointer_cast<T>(components.at(i));
+
+				if (!rtn) continue;
+
+				return rtn;
+			}
+
+			return rtn;
+		}
+
 		void tick();
 		void render();
 
